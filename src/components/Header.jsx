@@ -1,36 +1,29 @@
-import Button from "./Button";
 import { Link } from "react-router-dom";
+import photo from "../assets/Ricardo-transp.png"
 
 export default function Header() {
-
-
   return (
-    <div className=" bg-delftBlue-500 h-dvh w-full flex flex-col-reverse md:flex-row md:justify-evenly md:items-center gap-5 md:gap-3 px-4 py-5">
-      <div className="max-w-sm md:max-w-md text-white flex flex-col gap-5 items-center mx-auto md:mx-0">
-        <h1 className="text-5xl md:text-7xl text-center ">
-          <span className="text-bakerPink-400">Full-Stack</span>
-          <br /> Web Dev
-        </h1>
-        <p className="text-center text-3xl">
-          Helping you turn web ideas into{" "}
-          <span className="text-bakerPink-400 md:py-3 md:inline-block">
-            fully functioning
-          </span>
-          <br className="md:hidden" /> full-stack apps
-        </p>
-        <Button
-          classes={
-            "flex max-w-sm px-5 py-5 my-3 mb-5 rounded-md bg-gradient-to-r from-bakerPink-400 to-bakerPink-400 text-white text-3xl cursor-pointer hover:to-bakerPink-700 hover:scale-125 transition duration-500 hover:drop-shadow-xl"
-          }
-        >
-          <Link to={"/contact"}>Contact</Link>
-        </Button>
-      </div>
-      <div className="flex flex-col-reverse md:flex-col items-center gap-5">
-        <div className="w-64 md:w-80 h-64 md:h-80 bg-bakerPink-400 rounded-full flex items-center justify-center">
-          <h2 className="">Here goes my picture</h2>
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col lg:flex-row-reverse gap-10">
+        <div className="flex flex-col items-center gap-8 lg:gap-4 lg:flex-col-reverse p-2">
+          <h1 className="text-5xl lg:text-3xl font-bold">Ricardo Vazquez</h1>
+          <img
+          src={photo}
+          className="rounded-full w-96 bg-secondary"
+          />
         </div>
-        <h1 className="text-5xl md:text-4xl text-white py-5">Ricardo Vazquez</h1>
+
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-start">
+          <h1 className="text-5xl font-bold">
+            <span className="text-primary">Full-Stack</span><br className="hidden lg:inline-block"/> Web Dev
+          </h1>
+          <p className="pt-6 pb-7 max-w-md text-center lg:text-left">
+            Helping you turn ideas into fully functioning web apps.
+          </p>
+          <Link to={"/contact"} className="btn btn-primary">
+            Contact
+          </Link>
+        </div>
       </div>
     </div>
   );

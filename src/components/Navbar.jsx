@@ -1,66 +1,84 @@
 import { useState } from "react";
-import Logo from "../assets/Logo";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [hamburgerToggle, setHamburgerToggle] = useState(false);
   return (
-    <nav className="bg-white">
-      <div className="px-10 flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link to={"/"} className="flex items-center gap-3">
-          <Logo />
-          <h2 className="font-medium text-xl">Coqui Dev</h2>
-        </Link>
-        <button
-          className="inline-flex justify-self-end items-center p2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-celestialBlue focus:outline-none focus:ring-2 focus:ring-gray-200"
-          aria-controls="navbar-default"
-          aria-expanded="false"
-          data-collapse-toggle="navbar-default"
-          onClick={() => {
-            setHamburgerToggle(!hamburgerToggle);
-          }}
-        >
-          <GiHamburgerMenu className="text-delftBlue-500 w-8 h-8" />
-        </button>
-        <div
-          className={`${
-            hamburgerToggle ? "block" : "hidden"
-          } w-full md:block md:w-auto`}
-          id="navbar-default"
-        >
-          <ul className="font-medium text-black flex flex-col p-4 md:p-0 mt-4 border border-celestialBlue rounded-lg bg-uclaBlue md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-delftBlue ">
+    <nav className="navbar bg-neutral text-base-content">
+      <div className="navbar-start lg:hidden">
+        <div className="dropdown">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle text-neutral-content"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-neutral rounded-box w-52"
+          >
             <li>
-              <NavLink className="block py-2 px-3 rounded md:p-0 hover:bg-delftBlue-500 md:hover:bg-transparent hover:text-bakerPink-400">
-                Ricardo
-              </NavLink>
+              <Link to={"/"}>Homepage</Link>
             </li>
             <li>
-              <NavLink className="block py-2 px-3 rounded md:p-0 hover:bg-delftBlue-500 md:hover:bg-transparent hover:text-bakerPink-400">
-                Blog
-              </NavLink>
+              <Link to={"/about-me"}>About Me</Link>
             </li>
             <li>
-              <NavLink className="block py-2 px-3 rounded md:p-0 hover:bg-delftBlue-500 md:hover:bg-transparent hover:text-bakerPink-400">
-                Resumé
-              </NavLink>
+              <Link to={"/portolio"}>Portfolio</Link>
             </li>
             <li>
-              <NavLink className="block py-2 px-3 rounded md:p-0 hover:bg-delftBlue-500 md:hover:bg-transparent hover:text-bakerPink-400">
-                Portfolio
-              </NavLink>
+              <Link to={"/resume"}>Resumé</Link>
             </li>
             <li>
-              <NavLink
-                to={"/contact"}
-                className="block py-2 px-3 rounded md:p-0 hover:bg-delftBlue-500 md:hover:bg-transparent hover:text-bakerPink-400"
-              >
-                Contact
-              </NavLink>
+              <Link to={"/contact"}>Contact</Link>
             </li>
           </ul>
         </div>
       </div>
+      <div className="navbar-start hidden lg:block">
+        <div className="flex-none">
+          <ul className="menu menu-horizontal px-1">
+            <li>
+              <Link to={"/"}>Home</Link>
+            </li>
+            <li>
+              <Link to={"/about-me"}>About</Link>
+            </li>
+            <li>
+              <Link to={"/portfolio"}>Portfolio</Link>
+            </li>
+            <li>
+              <Link to={"/resume"}>Resumé</Link>
+            </li>
+            <li>
+              <Link to={"/contact"}>Contact</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="navbar-center">
+        <Link
+          to={"/"}
+          className="btn btn-ghost text-xl hover:text-primary-content hover:bg-primary"
+        >
+          Coqui Dev
+        </Link>
+      </div>
+      <div className="navbar-end"></div>
     </nav>
   );
 }
