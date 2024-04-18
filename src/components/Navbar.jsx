@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const [hamburgerToggle, setHamburgerToggle] = useState(false);
   return (
     <nav className="navbar bg-neutral text-base-content">
       <div className="navbar-start lg:hidden">

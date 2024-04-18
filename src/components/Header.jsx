@@ -6,7 +6,7 @@ export default function Header() {
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse gap-10">
         <div className="flex flex-col items-center gap-8 lg:gap-4 lg:flex-col-reverse p-2">
-          <h1 className="text-5xl lg:text-3xl font-bold">Ricardo Vazquez</h1>
+          <h1 className="text-5xl lg:text-3xl font-bold text-center">Ricardo Vazquez</h1>
           <img
           src={photo}
           className="rounded-full w-96 bg-secondary"

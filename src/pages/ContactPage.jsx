@@ -1,6 +1,6 @@
-import { BsPhone, BsClock } from "react-icons/bs";
-import Button from "../components/Button";
+import { BsPhone, BsClock, BsLinkedin } from "react-icons/bs";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ContactPage() {
   const [success, setSuccess] = useState(undefined);
@@ -49,6 +49,10 @@ export default function ContactPage() {
           <div className="flex items-center mt-5">
             <BsClock className="h-6 mr-3 text-primary" />
             <span>8:00 - 16:00</span>
+          </div>
+          <div className="flex items-center mt-5">
+            <BsLinkedin className="h-6 mr-3 text-primary" />
+            <Link className="link text-secondary overflow-hidden" to={'https://www.linkedin.com/in/ric-vazq/'}>https://www.linkedin.com/in/ric-vazq/</Link>
           </div>
         </div>
         <form className="md:col-span-8 p-10">
