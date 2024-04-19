@@ -1,3 +1,4 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Carousel(props) {
@@ -7,7 +8,7 @@ export default function Carousel(props) {
       {images.map((image) => {
         return (
           <div className="carousel-item w-full" key={uuidv4()}>
-            <img src={image} className=""/>
+            <LazyLoadImage src={image}  className=""/>
           </div>
         );
       })}

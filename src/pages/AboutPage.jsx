@@ -1,6 +1,6 @@
 import Carousel from "../components/Carousel";
-import photo1 from "../assets/kasack.jpg";
-import photo2 from "../assets/streetclothes.jpg";
+import photo1 from "../assets/small-kazack.jpg";
+import photo2 from "../assets/small-streetwear.jpg";
 import { useNavigate } from "react-router-dom";
 
 export default function AboutPage() {
