@@ -1,28 +1,26 @@
 import { BsPhone, BsClock, BsLinkedin } from "react-icons/bs";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
+import { Link, useNavigate, redirect } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+import { IoIosCloseCircle } from "react-icons/io";
 
 export default function ContactPage() {
   const [success, setSuccess] = useState(undefined);
   const [error, setError] = useState(undefined);
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.id]: e.target.value,
-    });
-  };
+  const form = useRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setSuccess("Your message has been sent successfully!");
+      const email = await emailjs.sendForm(
+        "service_586r9hw",
+        "template_63nsvz7",
+        form.current,
+        {
+          publicKey: "FS50HFJD2Ak56LcYp",
+        }
+      );
+      setSuccess(true);
     } catch (error) {
       if (error.response) {
         setError(error.response.data.message);
@@ -52,10 +50,15 @@ export default function ContactPage() {
           </div>
           <div className="flex items-center mt-5">
             <BsLinkedin className="h-6 mr-3 text-primary" />
-            <Link className="link text-secondary overflow-hidden" to={'https://www.linkedin.com/in/ric-vazq/'}>https://www.linkedin.com/in/ric-vazq/</Link>
+            <Link
+              className="link text-secondary overflow-hidden"
+              to={"https://www.linkedin.com/in/ric-vazq/"}
+            >
+              https://www.linkedin.com/in/ric-vazq/
+            </Link>
           </div>
         </div>
-        <form className="md:col-span-8 p-10">
+        <form className="md:col-span-8 p-10" onSubmit={handleSubmit} ref={form}>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
@@ -65,7 +68,7 @@ export default function ContactPage() {
                 First Name
               </label>
               <input
-                onChange={handleChange}
+                name="user_firstname"
                 type="text"
                 id="firstName"
                 className="appearance-none block w-full text-base-content bg-base-200 border border-primary rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-base-100 focus:border-secondary"
@@ -79,7 +82,7 @@ export default function ContactPage() {
                 Last Name
               </label>
               <input
-                onChange={handleChange}
+                name="user_lastname"
                 type="text"
                 id="lastName"
                 className="appearance-none block w-full bg-base-200 text-base-content border border-primary rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-base-100 focus:border-secondary"
@@ -95,7 +98,7 @@ export default function ContactPage() {
                 Email Address
               </label>
               <input
-                onChange={handleChange}
+                name="user_email"
                 type="email"
                 id="email"
                 className="appearance-none block w-full bg-base-200 text-base-content border border-primary rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-base-100 focus:border-secondary"
@@ -111,7 +114,6 @@ export default function ContactPage() {
                 Your Message
               </label>
               <textarea
-                onChange={handleChange}
                 name="message"
                 id="message"
                 rows="10"
@@ -119,14 +121,42 @@ export default function ContactPage() {
               ></textarea>
             </div>
 
-            {success && <p className="text-green-500 bold">{success}</p>}
             {error && <p className="text-red-500">{error}</p>}
           </div>
           <div className="flex items-center justify-center md:justify-end w-full px-3">
-            <button className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
           </div>
         </form>
       </div>
+      {success && (
+        <div role="alert" className="alert alert-success">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="stroke-current shrink-0 h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span>Your message has been sent successfully!</span>
+          <button
+            onClick={() => {
+              {
+                setSuccess(false);
+              }
+            }}
+          >
+            <IoIosCloseCircle className="w-6 h-6" />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

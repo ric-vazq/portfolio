@@ -1,5 +1,6 @@
 import daisyui from "daisyui";
 import typography from "@tailwindcss/typography"
+import tailwindcssAnimated from "tailwindcss-animated"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -22,7 +23,7 @@ export default {
       },
     },
   },
-  plugins: [daisyui, typography],
+  plugins: [daisyui, typography, tailwindcssAnimated],
   daisyui: {
     themes: ["synthwave"]
   }
