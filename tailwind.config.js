@@ -1,6 +1,6 @@
 import daisyui from "daisyui";
-import typography from "@tailwindcss/typography"
-import tailwindcssAnimated from "tailwindcss-animated"
+import typography from "@tailwindcss/typography";
+import tailwindcssAnimated from "tailwindcss-animated";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -22,12 +22,15 @@ export default {
         poppins: ["Poppins", "sans-serif"],
       },
       aspectRatio: {
-        '960/300': "960 / 300",
+        "960/300": "960 / 300",
+      },
+      backgroundImage: {
+        waves: "url('../assets/layered-waves-haikei.svg')",
       },
     },
   },
   plugins: [daisyui, typography, tailwindcssAnimated],
   daisyui: {
-    themes: ["synthwave"]
-  }
+    themes: ["synthwave"],
+  },
 };
