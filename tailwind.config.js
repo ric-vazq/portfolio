@@ -21,6 +21,9 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
+      aspectRatio: {
+        '960/300': "960 / 300",
+      },
     },
   },
   plugins: [daisyui, typography, tailwindcssAnimated],

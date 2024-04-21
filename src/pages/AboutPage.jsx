@@ -12,10 +12,10 @@ export default function AboutPage() {
   return (
     <div className="h-full w-11/12 mx-auto py-8 lg:py-12 flex flex-col gap-8 items-center lg:grid lg:grid-cols-2 lg:grid-rows-9 lg:place-items-start">
       <h1 className="text-4xl lg:text-5xl font-semibold">Who is Ricardo?</h1>
-      <div className="lg:row-span-9 lg:place-self-start">
+      <div className="w-full lg:row-span-9 lg:flex lg:justify-around lg:items-start">
         <Carousel images={images} />
       </div>
-      <article className="lg:row-span-8 prose max-w-md">
+      <article className="lg:row-span-8 prose w-full">
         <h2 className="text-primary">About Me</h2>
         <p className="">
           I am a young professional living and working in Berlin, Germany.
