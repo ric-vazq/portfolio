@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import photo from "../assets/Ricardo-transp.png";
-import waves from "../assets/layered-waves-haikei.svg";
 import "./Header.css"
 
 export default function Header() {

@@ -11,7 +11,9 @@ export default function ErrorPage() {
             does not exist. Please check in again soon to see further
             developments.
           </p>
-          <Link to={"/"} className="btn btn-primary">Go Home</Link>
+          <Link to={"/"} className="btn btn-primary">
+            Go Home
+          </Link>
         </div>
       </div>
     </div>

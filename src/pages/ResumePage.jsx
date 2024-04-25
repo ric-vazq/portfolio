@@ -197,7 +197,10 @@ export default function ResumePage() {
           <h1 className="text-2xl text-center text-primary-content">
             Interested? Reach out to me here!{" "}
           </h1>
-          <Link to={'/contact'} className="btn btn-lg btn-secondary animate-wiggle animate-infinite">
+          <Link
+            to={"/contact"}
+            className="btn btn-lg btn-secondary animate-wiggle animate-infinite"
+          >
             Contact
           </Link>
         </div>

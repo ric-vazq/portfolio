@@ -1,6 +1,6 @@
 import { BsPhone, BsClock, BsLinkedin } from "react-icons/bs";
 import { useState, useRef } from "react";
-import { Link, useNavigate, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { IoIosCloseCircle } from "react-icons/io";
 

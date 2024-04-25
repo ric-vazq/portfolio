@@ -6,7 +6,6 @@ import ContactPage from "./pages/ContactPage";
 import ErrorPage from "./pages/ErrorPage";
 import AboutPage from "./pages/AboutPage";
 import ResumePage from "./pages/ResumePage";
-import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
