@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Skills from "../components/Skills";
 
 export default function ResumePage() {
   return (
@@ -193,7 +194,8 @@ export default function ResumePage() {
             </li>
           </ul>
         </div>
-        <div className="bg-primary rounded-box p-5 flex flex-col items-center gap-4">
+        <Skills />
+        <div className="bg-primary rounded-box p-5 flex flex-col items-center gap-4 mt-10">
           <h1 className="text-2xl text-center text-primary-content">
             Interested? Reach out to me here!{" "}
           </h1>

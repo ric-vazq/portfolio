@@ -10,9 +10,9 @@ export default function AboutPage() {
     return navigate("/resume");
   };
   return (
-    <div className="h-full w-11/12 mx-auto py-8 lg:py-12 flex flex-col gap-8 items-center lg:grid lg:grid-cols-2 lg:grid-rows-9 lg:place-items-start">
+    <div className="h-full w-11/12 mx-auto py-8 lg:py-12 flex flex-col gap-8 items-center lg:grid lg:grid-cols-2 lg:grid-rows-9 lg:content-start lg:items-start">
       <h1 className="text-4xl lg:text-5xl font-semibold">Who is Ricardo?</h1>
-      <div className="w-full lg:row-span-9 lg:flex lg:justify-around lg:items-start">
+      <div className="lg:row-span-9 ml-28">
         <Carousel images={images} />
       </div>
       <article className="lg:row-span-8 prose w-full">

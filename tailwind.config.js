@@ -23,6 +23,7 @@ export default {
       },
       aspectRatio: {
         "960/300": "960 / 300",
+        "900/90": "900 / 90",
       },
       backgroundImage: {
         waves: "url('../assets/layered-waves-haikei.svg')",
