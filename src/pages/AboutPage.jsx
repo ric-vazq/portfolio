@@ -10,21 +10,21 @@ export default function AboutPage() {
     return navigate("/resume");
   };
   return (
-    <div className="h-full w-11/12 mx-auto py-8 lg:py-12 flex flex-col gap-8 items-center lg:grid lg:grid-cols-2 lg:grid-rows-9 lg:content-start lg:items-start">
-      <h1 className="text-4xl lg:text-5xl font-semibold">Who is Ricardo?</h1>
-      <div className="lg:row-span-9 ml-28">
+    <div className="h-full w-11/12 mx-auto py-8 lg:py-12 flex flex-col items-center lg:grid lg:grid-cols-2 lg:grid-rows-9 lg:items-start">
+      <h1 className="text-4xl lg:text-5xl font-semibold lg:justify-self-center lg:self-center">Who is Ricardo?</h1>
+      <div className="lg:row-span-9 lg:justify-self-center">
         <Carousel images={images} />
       </div>
-      <article className="lg:row-span-8 prose w-full">
+      <article className="lg:row-span-8 prose lg:justify-self-center">
         <h2 className="text-primary">About Me</h2>
-        <p className="">
+        <p className="text-xl">
           I am a young professional living and working in Berlin, Germany.
           Originally from Puerto Rico, I presently work as an intermediate care
           nurse for the Charité. My experience in a hospital setting has
           developed strong interdisciplinary communication, self-reflection, and
           organisational skills.
         </p>
-        <p className="">
+        <p className="text-xl">
           Parallel to my work as a nurse I took part in a Full Stack Web
           Developer Bootcamp. During that time I found a new passion in coding.
           The constant learning, growth, and creativity have made it an
@@ -37,7 +37,7 @@ export default function AboutPage() {
           </span>{" "}
           or through the navigation bar.
         </p>
-        <p>
+        <p className="text-xl">
           On a more personal note, I am an avid gym-goer, yogi, and swimmer. I
           enjoy subjects such as relational psychology, etymology, different
           sciences, and health in all its distinct forms.{" "}
