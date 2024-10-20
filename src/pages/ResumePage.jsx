@@ -3,10 +3,10 @@ import Skills from "../components/Skills";
 
 export default function ResumePage() {
   return (
-    <div className="md:flex justify-evenly items-start">
+    <div className="md:flex justify-center align-top">
       <div
         id="experienceTimeline"
-        className="max-w-sm md:max-w-md mx-auto md:rounded-box md:bg-neutral p-4 mt-10 mb-5"
+        className="max-w-sm md:max-w-md mr-10 md:rounded-box md:bg-neutral p-4 mt-10 mb-5"
       >
         <h1 className="font-black text-2xl text-base-content md:text-center py-4">
           Experience
@@ -126,10 +126,10 @@ export default function ResumePage() {
           </li>
         </ul>
       </div>
-      <div className="flex flex-col max-w-md mx-auto mb-10">
+      <div className="flex flex-col max-w-md mb-10">
         <div
-          id="experienceTimeline"
-          className="max-w-sm md:max-w-md mx-auto md:rounded-box md:bg-neutral p-4 md:my-10"
+          id="educationTimeline"
+          className="max-w-sm md:max-w-md md:rounded-box md:bg-neutral p-4 md:my-10"
         >
           <h1 className="font-black text-2xl text-base-content md:text-center py-4">
             Education

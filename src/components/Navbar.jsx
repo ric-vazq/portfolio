@@ -36,7 +36,7 @@ export default function Navbar() {
               <Link to={"/about-me"}>About Me</Link>
             </li>
             <li>
-              <Link to={"/portolio"}>Portfolio</Link>
+              <Link to={"/portfolio"}>Portfolio</Link>
             </li>
             <li>
               <Link to={"/resume"}>Resumé</Link>
